@@ -79,6 +79,21 @@
 
     evenFinder(nums);
 
+// OR (more efficient to save the preserved array and seperate the items into their own arrays)
+
+function evenFinder(anyArr) {
+  var oddNums = [];
+  var evenNums = [];
+  for (var i = 0; i < anyArr.length - 1; i++) {
+    if (anyArr[i] % 2 !== 0) {
+      oddNums.push(anyArr[i]);
+    } else {
+      evenNums.push(anyArr[i]);
+    }
+  }
+  return oddNums + " " + evenNums;
+}
+
 
 
   //Next problem
@@ -105,7 +120,20 @@
   //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
     //Code Here
+    function finder(randomNumFunc, anyArr) {
+      var randomNum = randomNumFunc();
+      console.log(randomNum);
+      for (var i = 0; i < anyArr.length; i++) {
+        if (anyArr[i] === randomNum) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
 
+
+    finder(getRandomArbitrary, numbers);
 
   //Next problem
 
@@ -115,7 +143,16 @@
   //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
     //Code Here
+  function reverse(anyStr) {
+    var reversedStr = "";
+    console.log(reversedStr)
+    for (var i = anyStr.length - 1; i >= 0; i--) {
+      reversedStr = reversedStr + anyStr[i];
+    }
+    return reversedStr;
+  }
 
+  reverse(str);
 
   //Next Problem
 
@@ -135,6 +172,32 @@
   */
 
     //Code Here
+
+
+    function removeItem(listArr, item) {
+      var newList = [];
+      for (var i = 0; i < listArr.length; i++) {
+        if (listArr[i] !== item) {
+          newList.push(listArr[i]);
+        }
+      }
+      return newList;
+    }
+
+    removeItem(myGroceryList, "corndogs");
+
+    function addItem(listArr, item) {
+      var newList = listArr;
+
+        newList.push(item);
+
+      return newList;
+    }
+
+
+addItem(myGroceryList, "salad");
+
+
 
   //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
