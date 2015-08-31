@@ -63,10 +63,22 @@
   //Next Problem
 
 
-  var nums = [1,2,3,6,22,98,45,23,22,12];
-  //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
+    var nums = [1,2,3,6,22,98,45,23,22,12];
+    //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-    //Code Here
+      //Code Here
+    function evenFinder(anyArr) {
+      for (var i = 0; i < anyArr.length - 1; i++) {
+        if (anyArr[i] % 2 !== 0) {
+          console.log(anyArr[i]);
+          anyArr.splice(i, 1);
+        }
+      }
+      return anyArr;
+    }
+
+    evenFinder(nums);
+
 
 
   //Next problem
